@@ -1,6 +1,6 @@
 'use strict';
 
-import {User} from './User';
+import {User} from './User.js';
 
 class Subscriber extends User {
     #pages;
@@ -20,9 +20,9 @@ class Subscriber extends User {
 
     getInfo() {
         return `${super.getInfo()} 
-        <p><strong>Pages:</strong> ${this.#pages.join(', ')}</p>
-        <p><strong>Groups:</strong> ${this.#groups.join(', ')}</p>
-        <p><strong>Monetization:</strong> ${this.#canMonetize ? 'Enabled' : 'Disabled'}</p>
+        <p>Pages: ${this.#pages.join(', ')}</p>
+        <p>Groups: ${this.#groups.join(', ')}</p>
+        <p>Monetization: ${this.#canMonetize ? 'Enabled' : 'Disabled'}</p>
         `;
     }
 

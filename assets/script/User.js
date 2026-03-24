@@ -23,9 +23,9 @@ class User {
 
     getInfo() {
         return `
-            <p><strong>Name:</strong> ${this.#name}</p>
-            <p><strong>Username:</strong> ${this.#userName}</p>
-            <p><strong>Email:</strong> ${this.#email}</p>
+            <p><Name: ${this.#name}</p>
+            <p>Username: ${this.#userName}</p>
+            <p>Email: ${this.#email}</p>
         `;
     }
 

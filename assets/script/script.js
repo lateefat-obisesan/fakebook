@@ -1,6 +1,6 @@
 'use strict';
 
-import { Subscriber } from "./Subscriber.js";
+import { Subscriber } from './Subscriber.js';
 
 const currentUser = new Subscriber(
     '101',
@@ -12,7 +12,7 @@ const currentUser = new Subscriber(
     true
 );
 
-const postButton = document.getAnimations('button');
+const postButton = document.getElementById('button');
 const textArea = document.getElementById('text');
 const fileInput = document.getElementById('file');
 const feed = document.getElementById('feed');
@@ -47,14 +47,14 @@ postButton.addEventListener('click', (e) => {
     newPost.style.backgroundColor = '#242526';
     newPost.style.border = '1px solid #3e4042';
 
-    newPost.innerHTML = `<div class="post-header" style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-            <img src="./assets/media/user-image.JPG" style="width:35px; height:35px; border-radius:50%; object-fit:cover;">
+    newPost.innerHTML = `<div class="post-header">
+            <img src="./assets/media/user-image.JPG" class="post-avatar">
             <div>
-                <p style="font-weight:bold; margin:0;">${currentUser.name}</p>
-                <p style="font-size:12px; color:#b0b3b8; margin:0;">${postDate}</p>
+                <p class="post-author">${currentUser.name}</p>
+                <p class="post-date">${postDate}</p>
             </div>
         </div>
-        <p class="post-content" style="margin-top:10px;">${textValue}</p>`;
+        <p class="post-content">${textValue}</p>`;
 
     feed.prepend(newPost);
     textArea.value = '';
