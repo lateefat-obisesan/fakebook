@@ -28,4 +28,4 @@ class User {
 }
 
 //now we export
-export{User};
+export {User};
