@@ -8,6 +8,7 @@
     padding: 0;
 }
 
+/* 2. Dark Theme Background */
 body {
     background-color: #18191a;
     color: #e4e6eb;
@@ -19,6 +20,7 @@ body {
     margin-inline: auto;
 }
 
+/* 3. Header Styling */
 .container-flex {
     background-color: #242526;
     display: flex;
@@ -39,7 +41,7 @@ nav .flex {
 }
 
 nav .flex li a {
-    color: #b0b3b8;
+    color: #ffff;
     text-decoration: none;
     padding: 10px;
     font-size: 15px;
