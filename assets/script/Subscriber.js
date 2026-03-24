@@ -20,6 +20,9 @@ class Subscriber extends User {
 
     getInfo() {
         return `${super.getInfo()} 
+        <p><strong>Pages:</strong> ${this.#pages.join(', ')}</p>
+        <p><strong>Groups:</strong> ${this.#groups.join(', ')}</p>
+        <p><strong>Monetization:</strong> ${this.#canMonetize ? 'Enabled' : 'Disabled'}</p>
         `;
     }
 

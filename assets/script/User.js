@@ -22,7 +22,11 @@ class User {
     get id() {return this.#email; }
 
     getInfo() {
-        return ;
+        return `
+            <p><strong>Name:</strong> ${this.#name}</p>
+            <p><strong>Username:</strong> ${this.#userName}</p>
+            <p><strong>Email:</strong> ${this.#email}</p>
+        `;
     }
 
 }
