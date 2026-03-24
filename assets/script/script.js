@@ -1,6 +1,6 @@
 'use strict';
 
-import { Subscriber } from ';
+import { Subscriber } from './Subscriber.js'
 
 const currentUser = new Subscriber(
     '101',
