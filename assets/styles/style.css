@@ -27,7 +27,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    border-bottom: 1px solid #3e4042;
 }
 
 .logo {
@@ -52,34 +51,32 @@ nav .flex li a {
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    object-fit: cover;
+    object-fit: cover; /*Prevents the image from stretching*/
 }
 
-/* 4. Post Box (The form area) */
 .post-box {
     background-color: #242526;
-    margin: 20px auto;
-    padding: 15px;
+    margin: 80px auto;
+    padding: 19px;
     border-radius: 8px;
-    max-width: 600px;
+    max-width: 650px;
 }
 
 #text {
     width: 100%;
     background: transparent;
     border: none;
-    color: white;
-    font-size: 18px;
-    outline: none;
-    resize: none;
+    color: #fff;
+    font-size: 16px;
+    outline: none; /* Removes the blue focus glow*/
     height: 80px;
+    resize: none; /* Removes the resize handle (the x/sign) from the page*/
 }
 
 .row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #3e4042;
     padding-top: 10px;
 }
 
@@ -89,13 +86,18 @@ nav .flex li a {
 
 .fa-image {
     font-size: 22px;
-    color: #45bd62; 
+    color: #fff; 
     cursor: pointer;
 }
 
+.hide {
+    display: none; 
+}
+
+
 #button {
     background-color: #2d88ff;
-    color: white;
+    color: #fff;
     border: none;
     padding: 8px 25px;
     border-radius: 6px;
@@ -103,12 +105,7 @@ nav .flex li a {
     cursor: pointer;
 }
 
-/* 5. General Helpers */
-.hide {
-    display: none;
-}
-
-/* 6. Mobile Styles (Responsive Design) */
+/* Mobile Styles (Responsive Design) */
 @media (max-width: 600px) {
     .container-flex {
         flex-direction: column; 
