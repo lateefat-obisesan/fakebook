@@ -23,10 +23,11 @@ body {
 /* 3. Header Styling */
 .container-flex {
     background-color: #242526;
+    width: 100%;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
 }
 
 .logo {
@@ -68,7 +69,7 @@ nav .flex li a {
     border: none;
     color: #fff;
     font-size: 16px;
-    outline: none; /* Removes the blue focus glow*/
+    outline: none; /*Removes the default blue glow when clicking to type*/
     height: 80px;
     resize: none; /* Removes the resize handle (the x/sign) from the page*/
 }
