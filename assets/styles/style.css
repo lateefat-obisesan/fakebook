@@ -1,2 +1,138 @@
 @charset "utf-8";
 @import"./reset.css";
+
+/* 1. Base Setup - Prevents layout breaking */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Dark Theme Background */
+body {
+    background-color: #18191a;
+    color: #e4e6eb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+/* 3. Header Styling */
+.container-flex {
+    background-color: #242526;
+    width: 100%;
+    padding: 10px 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #2d88ff;
+    font-size: 24px;
+}
+
+nav .flex {
+    list-style: none;
+    display: flex;
+}
+
+nav .flex li a {
+    color: #ffff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 15px;
+}
+
+#user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover; /*Prevents the image from stretching*/
+}
+
+.post-box {
+    background-color: #242526;
+    margin: 80px auto;
+    padding: 19px;
+    border-radius: 8px;
+    max-width: 650px;
+}
+
+#text {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    outline: none; /*Removes the default blue glow when clicking to type*/
+    height: 80px;
+    resize: none; /* Removes the resize handle (the x/sign) from the page*/
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#file {
+    display: none; 
+}
+
+.fa-image {
+    font-size: 22px;
+    color: #fff; 
+    cursor: pointer;
+}
+
+.hide {
+    display: none; 
+}
+
+
+#button {
+    background-color: #2d88ff;
+    color: #fff;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Mobile Styles (Responsive Design) */
+@media (max-width: 600px) {
+    .container-flex {
+        flex-direction: column; 
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav .flex {
+        padding: 0;
+    }
+
+    nav .flex li a {
+        padding: 5px;
+        font-size: 13px;
+    }
+
+    .post-box {
+        width: 95%; 
+        margin: 10px auto;
+    }
+
+    #text {
+        font-size: 16px;
+    }
+
+    .row {
+        padding-top: 15px;
+    }
+}
