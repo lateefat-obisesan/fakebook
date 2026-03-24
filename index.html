@@ -8,8 +8,6 @@
         <meta name="keywords" content="html, css, web, web development, javascript,">
         <link rel="icon" href="./assets/media/favicon.png" type="image/x-icon">
         <script src="./assets/script/script.js" defer type="module"></script>
-        <script src="./assets/script/subscriber.js" defer type="module"></script>
-        <script src="./assets/script/user.js" defer type="module"></script>
         <link rel="stylesheet" href="./assets/styles/style.css" media="all">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>FakeBook</title>
@@ -31,12 +29,12 @@
             </header>
             <main>
                 <section class="post-box">
-                    <form>
-                        <textarea id="text" placeholder="What's new, Lateefat"></textarea>
+                    <form id="form"> 
+                        <textarea id="text" placeholder="What's new, Lateefat?"></textarea>
                         <div class="row">
-                            <label>
+                            <label for="file">
                                 <i class="fa-regular fa-image"></i>
-                                <input type="file" id="file" accept="image">
+                                <input type="file" id="file" accept="image/*">
                             </label>
                              <button type="submit" id="button">Post</button>
                         </div>
@@ -46,8 +44,8 @@
                 <section id="feed"></section>
             </main>
             <div id="modal" class="hide">
-                <dov class="panel">
-                    <
+                <div class="panel">
+                    <span id="close">&times;</span>
                     <div id="info"></div>
                 </dov>
             </div>
