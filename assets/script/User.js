@@ -17,13 +17,13 @@ class User {
 
     //Getters
     get id() {return this.#id; }
-    get id() {return this.#name; }
-    get id() {return this.#userName; }
-    get id() {return this.#email; }
+    get name() {return this.#name; }
+    get userName() {return this.#userName; }
+    get email() {return this.#email; }
 
     getInfo() {
         return `
-            <p><Name: ${this.#name}</p>
+            <p>Name: ${this.#name}</p>
             <p>Username: ${this.#userName}</p>
             <p>Email: ${this.#email}</p>
         `;
