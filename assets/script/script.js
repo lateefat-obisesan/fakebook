@@ -7,56 +7,69 @@ const currentUser = new Subscriber(
     'Lateefat Obisesan',
     'lateefat_dev',
     'lateefatobi06@gmail.com',
-    ['Web Dev Tips', 'Product Design'],
-    ['Winnipeg Developers', 'Open Source'],
+    ['Web-Dev Tips', 'Product Design'],
+    ['Winnipeg Developers', 'WITT'],
     true
 );
 
 const postButton = document.getElementById('button');
 const textArea = document.getElementById('text');
 const fileInput = document.getElementById('file');
+const fileNameDisplay = document.getElementById('file-name'); 
 const feed = document.getElementById('feed');
-const userIcon = document.getElementById('user');
 const modal = document.getElementById('modal');
-const infoDiv = document.getElementById('info');
 const closeModal = document.getElementById('close');
+const userIcon = document.getElementById('user'); 
+const infoDiv = document.getElementById('info');
 
-userIcon.addEventListener('click', () => {
-    infoDiv.innerHTML = currentUser.getInfo();
-    modal.classList.remove('hide');
+fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = fileInput.files[0].name;
+    } else {
+        fileNameDisplay.textContent = '';
+    }
 });
 
-closeModal.addEventListener('click' , () => {
-    modal.classList.add('hide');
+userIcon.addEventListener('click', () => {
+    infoDiv.innerHTML = currentUser.getInfo(); // Injects your Name, ID, etc.
+    modal.classList.remove('hide'); // Removes 'hide' to show the box
+});
+
+closeModal.addEventListener('click', () => {
+    modal.classList.add('hide'); 
 });
 
 postButton.addEventListener('click', (e) => {
     e.preventDefault(); // Stop the page from refreshing
 
     const textValue = textArea.value.trim();
-    const hasImage = fileInput.files.length > 0;
+    const file = fileInput.files[0];
 
-    if (!textValue && !hasImage) {
-        alert('Please add text or an image to post.');
+    if (!textValue && !file) {
+        alert('Please add text or an image.');
         return;
     }
 
     const postDate = new Date().toLocaleDateString();
     const newPost = document.createElement('div');
     newPost.classList.add('post-box');
-    newPost.style.backgroundColor = '#242526';
-    newPost.style.border = '1px solid #3e4042';
 
-    newPost.innerHTML = `<div class="post-header">
-            <img src="./assets/media/user-image.JPG" class="post-avatar">
-            <div>
-                <p class="post-author">${currentUser.name}</p>
-                <p class="post-date">${postDate}</p>
-            </div>
+    let imageHtml = '';
+    if (file) {
+        const imageUrl = URL.createObjectURL(file);
+        imageHtml = `<img src="${imageUrl}" class="post-image">`;
+    }
+
+    newPost.innerHTML = `
+        <div class="post-header" style="display: flex; align-items: center;">
+        <span style="margin-left: auto; font-size: 12px; color: #fff;">${postDate}</span>
         </div>
-        <p class="post-content">${textValue}</p>`;
+        <p style="margin-top: 15px;">${textValue}</p>
+        ${imageHtml}
+    `;
 
     feed.prepend(newPost);
     textArea.value = '';
     fileInput.value = '';
+    fileNameDisplay.textContent = '';
 });
