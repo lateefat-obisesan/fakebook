@@ -31,8 +31,8 @@ fileInput.addEventListener('change', () => {
 });
 
 userIcon.addEventListener('click', () => {
-    infoDiv.innerHTML = currentUser.getInfo(); // Injects your Name, ID, etc.
-    modal.classList.remove('hide'); // Removes 'hide' to show the box
+    infoDiv.innerHTML = currentUser.getInfo();
+    modal.classList.remove('hide'); 
 });
 
 closeModal.addEventListener('click', () => {

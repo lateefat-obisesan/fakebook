@@ -23,7 +23,7 @@ class Subscriber extends User {
         <div class="profile-card">
             <img src="./assets/media/user-image.JPG" class="profile-img">
             <h2>${this.name}</h2>
-            <p>@${this.userName}</p>
+            <p>@${this.userName}</p> // @ is used to display the username like social media handles
             <div class="profile-details">
                 <p><strong>Email:</strong> ${this.email}</p>
                 <p><strong>Pages:</strong> ${this.pages.join(', ')}</p>
