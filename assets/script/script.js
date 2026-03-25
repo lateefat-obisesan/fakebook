@@ -52,7 +52,7 @@ postButton.addEventListener('click', (e) => {
 
     const postDate = new Date().toLocaleDateString();
     const newPost = document.createElement('div');
-    newPost.classList.add('post-box');
+    newPost.classList.add('post');
 
     let imageHtml = '';
     if (file) {
@@ -61,11 +61,15 @@ postButton.addEventListener('click', (e) => {
     }
 
     newPost.innerHTML = `
-        <div class="post-header" style="display: flex; align-items: center;">
-        <span style="margin-left: auto; font-size: 12px; color: #fff;">${postDate}</span>
+        <div class="post-header">
+        <div class="post-left">
+            <img src="./assets/media/user-image.JPG" class="post-img">
+            <span class="post-username">${currentUser.userName}</span>
         </div>
-        <p style="margin-top: 15px;">${textValue}</p>
-        ${imageHtml}
+        <span class="post-date">${postDate}</span>
+    </div>
+    <p class="post-text">${textValue}</p>
+    ${imageHtml}
     `;
 
     feed.prepend(newPost);

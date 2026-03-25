@@ -23,9 +23,14 @@ class User {
 
     getInfo() {
         return `
-            <p>Name: ${this.#name}</p>
-            <p>Username: ${this.#userName}</p>
-            <p>Email: ${this.#email}</p>
+        <div class="profile-card">
+            <img src="./assets/media/user-image.JPG" class="profile-img">
+            <h2>${this.#name}</h2>
+            <p>@${this.#userName}</p>
+            <div class="profile-details">
+                <p>Email: ${this.#email}</p>
+            </div>
+        </div>
         `;
     }
 

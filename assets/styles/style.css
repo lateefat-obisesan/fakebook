@@ -63,6 +63,52 @@ nav .flex li a {
     max-width: 650px;
 }
 
+.post {
+    background-color: #ffffff;
+    color: #000;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 650px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Profile image */
+.post-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Username */
+.post-username {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Date (right side) */
+.post-date {
+    font-size: 12px;
+    color: #555;
+}
+/* Text */
+.post-text {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
 #text {
     width: 100%;
     background: transparent;
@@ -91,11 +137,6 @@ nav .flex li a {
     cursor: pointer;
 }
 
-.hide {
-    display: none !important; 
-}
-
-
 #button {
     background-color: #2d88ff;
     color: #fff;
@@ -115,18 +156,22 @@ nav .flex li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* The actual box inside the modal */
+.hide {
+    display: none !important; 
+}
+
+/*info box */
 .panel {
-    background-color: #4577a9;
+    background-color: #3f4246;
     color: #fff;
-    padding: 50px;
-    border-radius: 8px;
+    padding: 40px;
+    border-radius: 13px;
     position: relative;
-    width: 350px;
-    position: relative;
+    width: 500px;
+    line-height: 1.8;  
 }
 
 /* Positioning the 'x' button */
@@ -139,13 +184,41 @@ nav .flex li a {
     color: #fff;
 }
 
+.profile-card { text-align: center;}
+
+/* Profile Image (centered at top) */
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+      display: block;  
+    margin: 0 auto 10px;  
+}
+
+/* Name */
+.profile-card h2 {
+    margin: 5px 0;
+}
+
+/* Username */
+.profile-card p {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Details section */
+.profile-details {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
 .post-image {
     width: 100%;
-    height: 300px; /* Fixed height so images don't take over the screen */
+    max-height: 400px;
     object-fit: cover; /* Crops the image to fit the box perfectly */
     border-radius: 8px;
     margin-top: 10px;
-    display: block;
 }
 
 /* 4. Style for the file name preview */
